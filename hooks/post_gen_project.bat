@@ -1,13 +1,10 @@
-#!/bin/bash -e
+@echo off
 
-echo -ne "Running with "
-
-python --version
+echo Running with %python%
 
 echo Creating and populating virtualenv..
-
 python -m venv venv
-. venv/bin/activate
+venv\Scripts\activate.bat
 
 pip install --upgrade pip pip-tools wheel
 make
@@ -15,10 +12,10 @@ make
 cd src
 
 echo Collecting static assets...
-./manage.py collectstatic
+python manage.py collectstatic
 
 echo Running initial migrations...
-./manage.py migrate
+python manage.py migrate
 
 cd ../
 echo Apply formatting..
