@@ -4,7 +4,7 @@ echo Running with %python%
 
 echo Creating and populating virtualenv..
 python -m venv venv
-venv\Scripts\activate.bat
+venv\Scripts\activate
 
 pip install --upgrade pip pip-tools wheel
 make
