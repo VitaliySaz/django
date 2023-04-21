@@ -6,7 +6,7 @@ echo Creating and populating virtualenv..
 python -m venv venv
 call venv\Scripts\activate.bat
 
-pip install --upgrade pip pip-tools wheel
+python -m pip install --upgrade pip pip-tools wheel
 make
 
 cd src
